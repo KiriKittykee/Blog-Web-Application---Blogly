@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Post</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    
+    <div class="formContainer">
+        <h1>Delete Post</h1>
+        <div class="innerBox">
+            <h3>Are you sure you wanna delete this <%= type %>: </h3>
+            <% if(post.title) { %>
+                <h4><%= post.title %></h4>
+            <% }else { %>
+                <h4>This <%= type %> has no title.</h4>
+            <% } %>
+            <h4><%= post.idea %></h4>
+
+            
+            <div class="buttonsContainer">
+                <form action="/delete-post/<%= type %>/<%= id %>" method="POST">
+                    <button class="formButton biggerButton" type="submit">Yes. I know what I want</button>
+                </form>
+                <a href="/no-changes-made">
+                    <button class="formButton biggerButton">No...I'm still not sure..</button>
+                </a>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</body>
+</html>

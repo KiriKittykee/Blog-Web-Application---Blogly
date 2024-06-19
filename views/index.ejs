@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/rnz2bks.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Inter:wght@200&display=swap" rel="stylesheet">
+    <title>Blogly</title>
+</head>
+
+<body>
+    <div class="bigContainer">
+        <div class="blogly">
+            <h1 class="firstHeader">Welcome to </br> Blogly</h1>
+        </div>
+            <ul class="content">
+                <li class="content__item content1">
+                    <a href="/cooking-recipe" class="buttonCont">
+                        <button class="button button-janus"><span>Cooking Recipe</span></button>
+                    </a>
+                </li>
+                <li class="content__item content2">
+                    <a href="/creative-idea" class="buttonCont">
+                        <button class="button button-janus"><span>Creative Idea</span></button>
+                    </a>
+                </li>
+                <li class="content__item content3">
+                    <a href="/random-thought" class="buttonCont">
+                        <button class="button button-janus"><span>Random Thought</span></button>
+                    </a>
+                </li>
+            </ul>
+
+        <div class="journaling">
+            <a href="/journal" class="button button-surtur">
+                <svg class="textcircle" viewBox="0 0 500 500">
+                    <title>Romanticize your life </title>
+                    <defs><path id="textcircle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"
+                    /></defs>
+                    <text><textPath xlink:href="#textcircle" aria-label="Projects & client work 2020" textLength="900">Romanticize your life</textPath></text>
+                </svg>
+                <svg aria-hidden="true" class="eye" width="70" height="70" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+                    <path class="eye__outer" d="M10.5 35.308c5.227-7.98 14.248-13.252 24.5-13.252s19.273 5.271 24.5 13.252c-5.227 7.98-14.248 13.253-24.5 13.253s-19.273-5.272-24.5-13.253z"/>
+                    <path class="eye__lashes-up" d="M35 8.802v8.836M49.537 11.383l-3.31 8.192M20.522 11.684l3.31 8.192" />
+                    <path class="eye__lashes-down" d="M35 61.818v-8.836 8.836zM49.537 59.237l-3.31-8.193 3.31 8.193zM20.522 58.936l3.31-8.193-3.31 8.193z" />
+                    <circle class="eye__iris" cx="35" cy="35.31" r="5.221" />
+                    <circle class="eye__inner" cx="35" cy="35.31" r="10.041" />
+                </svg>
+            </a>
+        </div>
+
+        <section class="pastPosts">
+            <div>
+                <h3>Your Cool Recipes</h3>
+                <% if(locals.recipes && recipes.length> 0) { %>
+                    <%- writeThatListForMommy(recipes, 'recipe' ) %>
+                        <% }else { %>
+                            <p class="recipes"> There are no recipes saved.</p>
+                        <% } %>
+            </div>
+        </section>
+
+        <section class="pastPosts">
+            <div>
+                <h3>Your Unique Creativeness</h3>
+                <% if(locals.creativeIdeas && creativeIdeas.length> 0) { %>
+                    <%- writeThatListForMommy(creativeIdeas, 'idea' ) %>
+                        <% }else { %>
+                            <p class="ideas"> There are no creative ideas saved.</p>
+                        <% } %>
+            </div>
+        </section>
+
+        <section class="pastPosts">
+            <div>
+                <h3>Your Most Random Thoughts</h3>
+                <% if(locals.randomThoughts && randomThoughts.length> 0) { %>
+                    <%- writeThatListForMommy(randomThoughts, 'thought' ) %>
+                        <% }else { %>
+                            <p class="thoughts"> There are no random thoughts saved.</p>
+                        <% } %>
+            </div>
+        </section>
+
+        <section class="pastPosts">
+            <div>
+                <h3>Journaling History</h3>
+                <% if(locals.journalEntrys && journalEntrys.length> 0) { %>
+                    <%- writeThatListForMommy(journalEntrys, 'entry' ) %>
+                        <% }else { %>
+                            <p class="entries"> There are no journal entrys saved.</p>
+                        <% } %>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

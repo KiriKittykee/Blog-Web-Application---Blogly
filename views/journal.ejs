@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div class="formContainer">
+        <div class="innerBox">
+            <h1 class="formTitle">What you wanna talk about?</h1>
+            <form class="form" action="/submit-journal" method="POST"> 
+                <input class="formText" type="text" name="title" placeholder="Give it a title">
+                <textarea class="formBigText" name="idea" id="" cols="30" rows="10" placeholder="Tell me more." required></textarea>
+                <input class="formButton" type="submit" value="Post">
+            </form> 
+        </div>
+    </div>
+    
+</body>
+</html>

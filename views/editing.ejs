@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div class="formContainer">
+        <h1>Edit Post</h1>
+        <form class="innerBox" action="/update-post/<%= type %>/<%= id %>" method="POST">
+            <label for="title">Title:</label>
+            <textarea class="formBigText" name="title" id="title" rows="1"><%=post.title%></textarea>
+            <label for="idea">Idea:</label>
+            <textarea class="formBigText" name="idea" id="idea" rows="3"><%=post.idea%></textarea>
+            <button class="formButton biggerButton" type="submit">Update Post</button>
+        </form>
+    </div>
+    
+    
+</body>
+</html>
